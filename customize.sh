@@ -120,13 +120,15 @@ fi
 
 # ---------------------------------------------------------------------
 
-ls -l ${MODPATH}/usr/bin/*.gz 2>/dev/null 1>/dev/null
+ls -l ${MODPATH}/system/usr/bin/*.gz 2>/dev/null 1>/dev/null
 if [ $? -eq 0 ] ; then
   LogMsg "Decompressing the compressed executables in \"${MODPAT}/usr/bin\" ..."
-  for CUR_FILE in ${MODPATH}/usr/bin/*.gz ; do
+  for CUR_FILE in ${MODPATH}/system/usr/bin/*.gz ; do
     LogMsg "Decompressing the file \"${CUR_FILE}\" ..."
     ${MODPATH}/gzip -d "${CUR_FILE}"
   done
+else
+  LogMsg "INFO: No compressed executables found"
 fi
 
 LogMsg "Installing the binaries for ${ARCH} ..."
