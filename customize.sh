@@ -36,7 +36,7 @@ __TRUE=0
 __FALSE=1
 
 
-if [ 0 = 1 ] ; then
+if [ 0 = 1 -o -f /data/local/tmp/debug  ] ; then
   exec 1>/data/local/tmp/customize.log 2>&1
   set -x
 fi
@@ -123,6 +123,7 @@ fi
 ls -l ${MODPATH}/system/usr/bin/*.gz 2>/dev/null 1>/dev/null
 if [ $? -eq 0 ] ; then
   LogMsg "Decompressing the compressed executables in \"${MODPAT}/usr/bin\" ..."
+  chmod 755 ${MODPATH}/gzip
   for CUR_FILE in ${MODPATH}/system/usr/bin/*.gz ; do
     LogMsg "Decompressing the file \"${CUR_FILE}\" ..."
     ${MODPATH}/gzip -d "${CUR_FILE}"
