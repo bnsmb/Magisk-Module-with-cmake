@@ -1,6 +1,6 @@
 id=cmake
 name=cmake
-version=3.30.4.v2.1.0
+version=3.30.4.v2.2.0
 versionCode=3
 author=Bernd.Schemmer@gmx.de
 description=cmake and ninja for Android

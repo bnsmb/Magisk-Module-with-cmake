@@ -26,3 +26,8 @@ History
   the cmake binaries now only need the standard OS libraries
   removed the library libuv.so
   added the executable ctresalloc
+
+28.12.2024 3.30.4.v2.2.0
+  small changes in the customize script due to github size limitations:
+    the binaries are now in compressed format in the ZIP file and will be decompressed by the customization script
+
