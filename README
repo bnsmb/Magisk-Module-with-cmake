@@ -1,0 +1,28 @@
+This Magisk module contains cmake binaries for arm64 CPUs
+
+The file ./system/usr/include/android/api-level.h in the Magisk Module is from the Android NDK r27b
+
+To use a different api-level.h set the variable PREFIX to the sysroot before starting cmake, e.g:
+
+PREFIX=/data/local/tmp/develop/sysroot/usr  cmake ..        
+
+
+History
+
+30.09.2024 v3.10.4
+  initial release
+
+08.10.2024 v3.10.4.v1.1.0
+  applied the patches for cmake from the Termux repository
+  added the file ./system/usr/include/android/api-level.h 
+
+31.10.2024 v3.10.4.v1.1.1
+  removed the not necessary service.sh script
+
+12.11.2024 v3.10.4_v2.0.0
+  added ninja 
+
+13.12.2024 v3.10.4_v2.1.0
+  the cmake binaries now only need the standard OS libraries
+  removed the library libuv.so
+  added the executable ctresalloc
